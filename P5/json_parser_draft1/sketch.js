@@ -1,4 +1,9 @@
-var log;
+//
+
+
+
+var log_1;
+var log_temp;
 
 var param_x_pos = 30;
 var param_y_pos = 20;
@@ -9,7 +14,7 @@ var which_point = 0;
 function preload() 
 {
     //This is currently a placeholder for the JSON file
-    log = 
+    log_1 = 
     {
         points: 
         [
@@ -42,6 +47,8 @@ function preload()
             }
         ]
     }
+
+    //log_1 = loadJSON("example.json");
 }
 
 function setup() 
@@ -52,7 +59,6 @@ function setup()
 function draw() 
 {
     background(0);
-
     textFont('Rubik');
     display_datapoint_params();
 }
@@ -79,9 +85,9 @@ function display_datapoint_params()
     text("RSSI", param_x_pos, param_y_pos + (param_offset * 7));
 
     text(which_point, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 1));
-    text(log.points[which_point].id, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 3));
-    text(log.points[which_point].time, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 4));
-    text(log.points[which_point].gps_lat, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 5));
-    text(log.points[which_point].gps_long, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 6));
-    text(log.points[which_point].rssi, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 7));
+    text(log_1.points[which_point].id, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 3));
+    text(log_1.points[which_point].time, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 4));
+    text(log_1.points[which_point].gps_lat, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 5));
+    text(log_1.points[which_point].gps_long, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 6));
+    text(log_1.points[which_point].rssi, param_x_pos + param_x_offset1, param_y_pos + (param_offset * 7));
 }
