@@ -61,6 +61,14 @@ function draw()
     background(0);
     textFont('Rubik');
     display_datapoint_params();
+    add_markers();
+}
+
+function add_markers()
+{
+    var marker = new mapboxgl.Marker()
+        .setLngLat([log_1.points[which_point].gps_long, log_1.points[which_point].gps_lat])
+        .addTo(map);
 }
 
 //Right and left arrows will allow us to page through our data points
